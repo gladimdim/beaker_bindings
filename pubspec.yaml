@@ -1,0 +1,12 @@
+name: beaker_bindings
+description: Dart bindings for Beaker Browser JavaScript API.
+version: 0.0.1
+author: Dmytro Gladkyi <gladimdim@gmail.com>
+homepage:
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  js: ^0.6.0
+  rxdart: ^0.24.1
