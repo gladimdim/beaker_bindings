@@ -2,7 +2,7 @@ name: beaker_bindings
 description: Dart bindings for Beaker Browser JavaScript API.
 version: 0.0.1
 author: Dmytro Gladkyi <gladimdim@gmail.com>
-homepage:
+homepage: https://github.com/gladimdim/beaker_bindings
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
