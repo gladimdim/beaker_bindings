@@ -101,7 +101,7 @@ class Beaker {
         .callMethod("encode", [jsonEncode(message).toString()]);
   }
 
-  Future sendMessageToPeer(
+  List sendMessageToPeer(
       {String peerId, Map<String, dynamic> message, String topicName}) {
     var id = new Uuid().v1();
     Map messageWithId = {
@@ -121,7 +121,7 @@ class Beaker {
     });
     print("Sending targeted message to: $peerId and message: $messageWithId");
     topic.send(peerId, encoded);
-    return completer.future;
+    return [id, completer.future];
   }
 
   void sendMessageToTopic(Map<String, dynamic> message, String topicName) {
