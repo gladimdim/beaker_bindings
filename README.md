@@ -97,6 +97,25 @@ void initState() {
 }
 ```
 
+## Respond to incoming messages
+
+You can use Column widget to show all incoming UUIDs and render them as buttons. If user presses on button - send response for the incoming request by adding the same UUID as in request. Once send, immediately remove UUID from list of incoming UUIDs.
+```dart
+Column(
+  children: incoming.keys.map((uuid) {
+    return RaisedButton(
+      child: Text("Respond to $uuid"),
+      onPressed: () {
+        beaker.sendMessageToTopic({"uuid": uuid, "ok": "true"}, 'sloboda');
+        setState(() {
+          incoming.removeWhere((key, value) => key == uuid);
+        });
+      },
+    );
+  }).toList(),
+);
+```
+
 ## Get list of connected peers
 Listen to stream:
 
