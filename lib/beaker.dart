@@ -9,6 +9,10 @@ import 'package:js/js.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:uuid/uuid.dart';
 
+bool hasBeakerAPI() {
+  return context["beaker"] != null;
+}
+
 external PeerSockets get peersockets;
 
 @JS()
@@ -64,10 +68,6 @@ class Beaker {
 
   List<String> get allPeers {
     return peers.toList();
-  }
-
-  static bool hasBeakerAPI() {
-    return !!context["beaker"];
   }
 
   var _jsTextEncoder = new JsObject(context['TextEncoder']);
